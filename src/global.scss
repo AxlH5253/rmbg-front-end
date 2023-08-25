@@ -24,3 +24,56 @@
 @import "@ionic/angular/css/text-alignment.css";
 @import "@ionic/angular/css/text-transformation.css";
 @import "@ionic/angular/css/flex-utils.css";
+
+ion-toolbar{
+    border-bottom: 1px solid #ccc;
+    padding: 10px 40px;
+}
+
+.fl{
+    display: flex;
+}
+
+.fl-vertical{
+    flex-direction: column;
+}
+
+.align-it-center{
+    align-items: center;
+}
+
+.jc-c-center{
+    justify-content: center;
+}
+
+.h-80-v{
+    height: 80vh;
+}
+
+.pd-20{
+    padding: 20px;
+}
+
+.pd-40{
+    padding: 40px;
+}
+
+.pdt-0{
+    padding-top: 0px;
+}
+
+.pdb-0{
+    padding-bottom: 0px;
+}
+
+.mgb-25{
+    margin-bottom: 25px;
+}
+
+.text-center{
+    text-align: center;
+}
+
+.p-absolute{
+    position: absolute;
+}

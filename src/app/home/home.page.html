@@ -1,20 +1,35 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
-
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+<ion-toolbar>
+  <div slot="start">
+    <img src="assets/imgs/logo.png" class="logo" slot="start">
+  </div>
+  <ion-title>Background Remover</ion-title>
+</ion-toolbar>
+<ion-content>
+  <div class="h-80-v pd-40 pdt-0 fl fl-vertical jc-c-center">
+    <div class="mgb-25">
+      <h1 class="text-center">Upload an image to remove background</h1>
+    </div>
+    <ion-row class="image-row">
+      <ion-col  size-lg="5.5" size-sm="5.5" size-xs="12" offset="0.5" (click)="takePicture(image_to_remove_bg)">
+        <div class="image-box fl fl-vertical align-it-center jc-c-center">
+          <ion-icon class="icon-image" *ngIf="!image_to_remove_bg.src" name="camera-outline"></ion-icon>
+          <h3 *ngIf="!image_to_remove_bg.src">Upload image here</h3>
+          <img *ngIf="image_to_remove_bg.src" [src]="image_to_remove_bg.src">
+        </div>
+      </ion-col>
+      <ion-col  size-lg="5.5" size-sm="5.5" size-xs="12" offset="0.5">
+        <div class="image-box fl fl-vertical align-it-center jc-c-center pd-20" [ngClass]="!output_image ? 'box-no-img' : on_upload_image ? 'box-proccess-img' : ''">         
+          <h2 class="text-center" *ngIf="!output_image">The background-removed image will be displayed here</h2>
+          <img *ngIf="output_image" [src]="output_image">
+          <ion-spinner *ngIf="on_upload_image"  color="light"  class="p-absolute"></ion-spinner>
+          <ion-buttons class="button-box" *ngIf="!on_upload_image && output_image">
+            <ion-button fill="solid" size="small" color="dark" (click)="saveFile()">
+              <ion-icon slot="start" name="download-outline" color="light"></ion-icon>
+              Download Image
+            </ion-button>
+          </ion-buttons> 
+        </div>
+      </ion-col>
+    </ion-row>
   </div>
 </ion-content>
