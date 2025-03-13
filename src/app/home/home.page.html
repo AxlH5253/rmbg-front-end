@@ -7,18 +7,18 @@
 <ion-content>
   <div class="h-80-v pd-40 pdt-0 fl fl-vertical jc-c-center">
     <div class="mgb-25">
-      <h1 class="text-center">Upload an image to remove background</h1>
+      <h3 class="text-center">Upload an image to remove background</h3>
     </div>
     <ion-row class="image-row">
-      <ion-col  size-lg="5.5" size-sm="5.5" size-xs="12" offset="0.5" (click)="takePicture(image_to_remove_bg)">
+      <ion-col  size-lg="6" size-sm="6" size-xs="12" (click)="getImageAction(image_to_remove_bg)">
         <div class="image-box fl fl-vertical align-it-center jc-c-center">
           <ion-icon class="icon-image" *ngIf="!image_to_remove_bg.src" name="camera-outline"></ion-icon>
           <h3 *ngIf="!image_to_remove_bg.src">Upload image here</h3>
           <img *ngIf="image_to_remove_bg.src" [src]="image_to_remove_bg.src">
         </div>
       </ion-col>
-      <ion-col  size-lg="5.5" size-sm="5.5" size-xs="12" offset="0.5">
-        <div class="image-box fl fl-vertical align-it-center jc-c-center pd-20" [ngClass]="!output_image ? 'box-no-img' : on_upload_image ? 'box-proccess-img' : ''">         
+      <ion-col  size-lg="6" size-sm="6" size-xs="12">
+        <div class="image-box fl fl-vertical align-it-center jc-c-center" [ngClass]="!output_image ? 'box-no-img pd-20' : on_upload_image ? 'box-proccess-img' : ''">         
           <h2 class="text-center" *ngIf="!output_image">The background-removed image will be displayed here</h2>
           <img *ngIf="output_image" [src]="output_image">
           <ion-spinner *ngIf="on_upload_image"  color="light"  class="p-absolute"></ion-spinner>
